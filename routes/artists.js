@@ -1,5 +1,3 @@
-const music = require('../models/music');
-
 var express     = require('express'),
     /* router      = express.Router(), */
     router = express.Router({
@@ -24,7 +22,8 @@ var express     = require('express'),
         callback(null, true);
     },
     upload  = multer({storage: storage, fileFilter: imageFilter}),
-    Artist  = require('../models/artist');
+    music   = require('../models/music'),
+    artist  = require('../models/artist');
 
 /* router.get('/', function(req,res){
     Album.find({}, function(err, allAlbum){
@@ -83,7 +82,7 @@ router.post('/' , middleware.isLoggedIn, upload.single('image'),function(req,res
     
 });
 
-router.get('/:id', function (req,res) {
+router.get('/:name', function (req,res) {
     music.find({ name: req.params.id },function (err, foundMusic) {
         if(err){
             console.log(err);

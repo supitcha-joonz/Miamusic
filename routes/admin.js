@@ -51,7 +51,7 @@ router.get('/' , middleware.isLoggedIn, function (req, res) {
     });
 });
 
-/* router.post('/' , middleware.isLoggedIn, upload.single('image'),function(req,res){
+router.post('/' , middleware.isLoggedIn, upload.single('image'),function(req,res){
     req.body.music.image = '/upload/' + req.file.filename;
     req.body.music.author = {
         id: req.user._id,
@@ -67,9 +67,9 @@ router.get('/' , middleware.isLoggedIn, function (req, res) {
         }
     });
     
-}); */
+});
 
-router.post('/' , middleware.isLoggedIn ,function(req,res){
+/* router.post('/' , middleware.isLoggedIn ,function(req,res){
     Music.create(req.body.music, function(err, newlyCreate){
         if(err){
             req.flash('success','Your music is created.');
@@ -78,7 +78,7 @@ router.post('/' , middleware.isLoggedIn ,function(req,res){
             res.redirect('/admin');
         }
     });
-});
+}); */
 
 
 
