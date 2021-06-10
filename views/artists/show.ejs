@@ -1,0 +1,62 @@
+<%- include('../partials/h-show.ejs') %>
+
+
+<div class="scroll" style="width: 100%; height: 595px; overflow-y: scroll; scrollbar-arrow-color:blue; scrollbar-face-color: #e7e7e7; scrollbar-3dlight-color: #a0a0a0; scrollbar-darkshadow-color:#888888">
+  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+      <p><%=artist.name%></p>
+    </div>
+    <div class="product-device shadow-sm d-none d-md-block"></div>
+    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+  </div>
+
+  <div class="card mb-3" style="max-width: 100%;">
+    <div class="container">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="<%=artist.image%>" width="80%" height="300px">
+      </div>
+      
+      <div class="col-md-8">
+        <div class="scroll" style="width: 100%; height: 300px; overflow-y: scroll; scrollbar-arrow-color:blue; scrollbar-face-color: #e7e7e7; scrollbar-3dlight-color: #a0a0a0; scrollbar-darkshadow-color:#888888">
+        <div class="card-body">
+
+
+       
+          <div class="d-grid gap-2 col-6 mx-auto">
+           
+            <p><a href="/artist" class="w-100 btn btn-primary"></a></p>
+           
+          </div>
+      
+
+
+           
+          
+
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </div>
+
+
+
+<div class="container" align="center"> 
+  <div class="card w-75">
+      <div class="card-body">
+        <h5 class="card-title">Submitted by <%= artist.author.username %></h5>
+        <% if(currentUser && currentUser.isadmin){ %>
+          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+            <p><a href='/artist/<%= artist._id %>/edit' class="btn btn-warning">Edit</a>&nbsp;&nbsp;&nbsp;
+            <form id = 'delete-form' action = '/artist/<%= artist._id %>?_method=DELETE' method='POST'>
+                <button type='submit' class="btn btn-danger">Delete</button>
+            </form>
+          </div>
+        <% } %>    
+      </div>
+    </div>
+</div>
+ 
+<%- include('../partials/footer.ejs') %>

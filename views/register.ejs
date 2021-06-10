@@ -1,0 +1,58 @@
+<%- include('partials/headersignup.ejs') %>
+
+<!-- <div class="container">
+<h2>Register</h2>
+
+    <form action="/register" method="POST">
+        <input type="text" name="username" placeholder="username">
+        <input type="password" name="password" placeholder="password">
+        <button>Register</button>
+    </form>
+</div> -->
+
+<section>
+    <div class="img">
+        <img src="https://ae01.alicdn.com/kf/H41c60f56dfd9458884b83ae39307a63b0/Hello-LED-Neon-Light-Sign-Neon-Sign.jpg_Q90.jpg_.webp">
+    </div>
+    <div class="content">
+        <div class="form">
+            <h2>SIGN UP</h2>
+            <form action="/register" method="POST" enctype="multipart/form-data">
+                <div class="input">
+                    <span>Username</span>
+                    <input type="text" name="username" placeholder="username">
+                </div>
+                <!-- <div class="input">
+                    <span>AdminCode</span>
+                    <input type="text" name="adminCode" placeholder="Type admin code here">
+                </div> -->
+                <div class="input">
+                    <span>Name</span>
+                    <input type="text" name="firstname" placeholder="First name">
+                </div>
+                <div class="input">
+                    <span>Image</span>
+                    <input type="file" name="profileimg" placeholder="image/*">
+                </div>
+                <div class="input">
+                    <span>Email Address</span>
+                    <input type="e-mail" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required title="You'll use this when you log in and if you ever need to reset your password." placeholder="E-mail Address">
+                </div>
+                <div class="input">
+                    <span>Password</span>
+                    <input type="password" name="password" placeholder="password">
+                </div>
+                <div class="remember">
+                    <label><input type="checkbox" name=""> I accept the Terms of use & Privacy Policy</label>
+                </div>
+                <div class="input">
+                    <input type="submit" value="Create Account" name="">
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</section>   
+
+
+<%- include('partials/footer.ejs') %>

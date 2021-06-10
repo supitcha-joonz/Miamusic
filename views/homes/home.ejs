@@ -1,0 +1,132 @@
+<%- include('../partials/header.ejs') %>
+
+
+<main>
+  
+  <div class="scroll" style="width: 100%; height: 600px; overflow-y: scroll; scrollbar-arrow-color:blue; scrollbar-face-color: #e7e7e7; scrollbar-3dlight-color: #a0a0a0; scrollbar-darkshadow-color:#888888">      
+      <% home.forEach(function(home){ %>
+      
+           <div class="carousel-inner">
+            
+              <div class="carousel-item active">
+                <img src="<%= home.image %>" class="d-block w-100" alt="..." width="100%" height="600px">
+              </div>
+              
+            </div>
+          
+         <br>
+         <div class="container">
+           <h1 class="top">TOP SONG CHART</h1>
+         
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+            
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="<%= home.picture %>" class="card-img-top" height="350px">
+                <div class="card-body">
+                  <h5 class="card-title"><%= home.song %></h5>
+                  <div class="d-flex justify-content-between align-items-center">
+                  </div>
+                </div>
+              </div>
+            </div>  
+
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="<%= home.picture1 %>" class="card-img-top" height="350px">
+                <div class="card-body">
+                  <h5 class="card-title"><%= home.song1 %></h5>
+                  <div class="d-flex justify-content-between align-items-center">
+                  </div>
+                </div>
+              </div>
+            </div>  
+
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="<%= home.picture2 %>" class="card-img-top" height="350px">
+                <div class="card-body">
+                  <h5 class="card-title"><%= home.song2 %></h5>
+                  <div class="d-flex justify-content-between align-items-center">
+                  </div>
+                </div>
+              </div>
+            </div>  
+           
+           
+          </div>
+          
+        
+        
+        <hr>
+        <br>
+        
+          <h1 class="top">TOP ALBUM CHART</h1>
+
+         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+         
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="<%= home.ipcalb %>" class="card-img-top" height="350px">
+  
+              <div class="card-body">
+                <h5 class="card-title"><%= home.namealb %></h5>
+                
+                <div class="d-flex justify-content-between align-items-center">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="<%= home.ipcalb1 %>" class="card-img-top" height="350px">
+  
+              <div class="card-body">
+                <h5 class="card-title"><%= home.namealb1 %></h5>
+                
+                <div class="d-flex justify-content-between align-items-center">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="<%= home.ipcalb2 %>" class="card-img-top" height="350px">
+  
+              <div class="card-body">
+                <h5 class="card-title"><%= home.namealb2 %></h5>
+                
+                <div class="d-flex justify-content-between align-items-center">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+         </div>
+       
+       <hr>
+      
+       <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">RECCOMENT ARTIST</h2>
+          <p class="lead"><strong>"JUSTIN BIEBER"</strong></p>
+        </div>
+        <div class="col-md-5">
+         <img src="<%= home.art %>" width="450px" height="450px">
+        </div>
+       
+    </div>
+    
+  </div>
+  
+    <% }); %> 
+  </div>
+  <br>
+  
+ 
+</main>
+
+<%- include('../partials/footer.ejs') %>

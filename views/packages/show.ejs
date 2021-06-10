@@ -1,0 +1,129 @@
+<%- include('../partials/h-package.ejs') %>
+
+
+<div class="scroll" style="width: 100%; height: 600px; overflow-y: scroll; scrollbar-arrow-color:blue; scrollbar-face-color: #e7e7e7; scrollbar-3dlight-color: #a0a0a0; scrollbar-darkshadow-color:#888888">
+  <br>
+  <main class="container">
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal" style="color: #3E1212;"><strong>Month</strong> </h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">฿19<small class="text-muted fw-light">/month</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li style="color: #3E1212;">First month pay only 19฿</li>
+            </ul>
+            <a href='/login' class="w-100 btn btn-outline-warning" style="width: 100%; color: red;">Apply</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal" style="color: #3E1212;"><strong>3 Months</strong>  </h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">฿49<small class="text-muted fw-light">/3 months</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>The first 3 months, pay only 49฿.</li>
+            </ul>
+            <a href='/login' class="w-100 btn btn-outline-warning" style="width: 100%; color: red;" >Apply</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-danger">
+          <div class="card-header py-3 text-white bg-danger border-danger">
+            <h4 class="my-0 fw-normal"><strong> Pro Shared</strong></h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">฿159<small class="text-muted fw-light">/month</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Share up to 3 people</li>
+            </ul>
+            <a href='/login' class="w-100 btn btn-danger" style="color: whitesmoke;">Apply</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="display-6 text-center mb-4">Compare plans</h2>
+
+    <div class="table-responsive">
+      <table class="table text-center">
+        <thead>
+          <tr>
+            <th style="width: 50%;"></th>
+            <th style="width: 25%;"><h5 style="color: #FFC300;"><strong>VIP</strong> </h5> </th>
+            <th style="width: 25%;"><h5><strong>FREE</strong> </h5> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" class="text-start">Listen to more than 30 million songs.</th>
+            <td><h6 style="color: #FFC300;"> Unlimited</h6></td>
+            <td><h6 style="color: whitesmoke;"> Limited</h6></td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">Download to listen to music offline.</th>
+            <td><h6 style="color: #FFC300;"> Unlimited</h6></td>
+            <td><h6 style="color: whitesmoke"> Limited</h6></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <th scope="row" class="text-start">Listen to music while lock screen.</th>
+            <td><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FFC300" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+            </svg></td>
+            <td><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="whitesmoke" class="bi bi-check-circle" viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+              <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+            </svg></td>
+          
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">Press to skip songs unlimitedly.</th>
+            <td><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FFC300" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+            </svg></td>
+            <td><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="whitesmoke" class="bi bi-check-circle" viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+              <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+            </svg></td>
+            
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">listen to music continuously no interstitial ads.</th>
+            <td><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FFC300" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+            </svg></td>
+            <td></td>
+           
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">Choose to listen to music as you like (On Demand).</th>
+            <td><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FFC300" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+            </svg></td>
+            <td></td>
+           
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">Listen to music in high sound quality (Hi-Fi).</th>
+            <td><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FFC300" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+            </svg></td>
+            <td></td>
+           
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+</div>
+
+<%- include('../partials/footer.ejs') %>

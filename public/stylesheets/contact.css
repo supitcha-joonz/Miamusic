@@ -1,0 +1,16 @@
+body{
+    background-color: #3E1212;
+}
+.card-body{
+    color: #3E1212;
+    background-color: whitesmoke;
+}
+.card-body h5{
+    font-weight: 800;
+}
+.card-body p{
+    font-weight: 600;
+}
+.card1{
+    background-color: transparent;
+}

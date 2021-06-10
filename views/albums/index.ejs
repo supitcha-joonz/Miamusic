@@ -1,0 +1,55 @@
+<%- include('../partials/h-album.ejs') %>
+
+<div class="scroll" style="width: 100%; height: 600px; overflow-y: scroll; scrollbar-arrow-color:blue; scrollbar-face-color: #e7e7e7; scrollbar-3dlight-color: #a0a0a0; scrollbar-darkshadow-color:#888888">    
+  <div class="card2">
+    <br><br><br>
+    <h1 class="fw">ALBUM
+      <% if(currentUser && currentUser.isadmin){ %>
+        <a href="/album/new" class="btn btn-outline my-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="whitesmoke" class="bi bi-plus-lg" viewBox="0 0 16 16">
+        <path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"/>
+      </svg></a>
+       <% } %>
+  </h1>
+    <div class="card-body">
+     
+    </div>
+  </div>
+  
+
+  <div class="album py-5">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+      <% album.forEach(function(album){ %>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="<%= album.image %>" class="card-img-top" height="350px">
+
+            <div class="card-body">
+              <h5 class="card-title"><%= album.name %></h5>
+              
+              <div class="d-flex justify-content-between">
+                <div class="btn-group">
+                  <a  href="/album/<%= album._id %>" class="btn btn-sm btn-outline-secondary">Song</a>
+                  
+                </div>
+               
+              </div>
+            </div>
+          </div>
+          <br>
+        </div>
+      <% }); %>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+<%- include('../partials/footer.ejs') %>

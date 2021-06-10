@@ -1,0 +1,21 @@
+
+.top {
+    color: #3E1212;
+    font-weight: 1000;
+}
+.featurette-heading {
+  padding-top: 100px;
+  padding-left: 130px;
+  font-weight: 600;
+  color: #3E1212;
+}
+.lead {
+  padding-top: 50px;
+  font-size: 80px;
+  font-weight: 500;
+  color: #3E1212;
+}
+.card-title {
+  color: #3E1212;
+}
+

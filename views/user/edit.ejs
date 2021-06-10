@@ -1,0 +1,22 @@
+<%- include('../partials/header.ejs') %>
+
+
+<div class="container">
+  <form action="/user/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label class="form-label">Statue name</label>
+        <input type="text" class="form-control" name="username[username]" placeholder="<%= user.firstname %>" value="<%= user.firstname %>">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Image</label>
+        <img src="<%= user.profileimg %>" width="300px">
+        <input type="file" class="form-control" name="profileimg" accept="image/*">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <a href="/user/<%= user._id %>">Go Back</a>
+    </form>
+  </div>
+  
+
+
+<%- include('../partials/footer.ejs') %>

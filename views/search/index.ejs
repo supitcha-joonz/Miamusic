@@ -1,0 +1,94 @@
+<%- include('../partials/h-search.ejs') %>
+
+<br>
+<div class="container">
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="false">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="search-collection">
+        <form action="/artist" method="GET" class="form-inline">
+          <div class="form-group">
+            <p>
+            <input type="text" name="search" placeholder="Artist search..." class="form-control">
+            <br><br>
+            </p>
+          </div>
+        </form>
+      </form>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="search-collection">
+        <form action="/album" method="GET" class="form-inline">
+          <div class="form-group">
+            <p>
+              <input type="text" name="search" placeholder="Album search..." class="form-control">
+              <br><br>
+            </p>
+          </div>
+        </form>
+      </form>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="search-collection">
+        <form action="/song" method="GET" class="form-inline">
+          <div class="form-group">
+            <p>
+              <input type="text" name="search" placeholder="Song search..." class="form-control">
+              <br><br>
+            </p>
+          </div>
+        </form>
+      </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+
+
+                          <!-- <select class="form-control search-slt">
+                              <option>Choose Search</option>
+                             
+                              <option>
+                                <a><p>Artist</p></a href="/">
+                              </option>
+                             
+                              <option>
+                                  <a><p>Album</p></a href="#">
+                              </option>
+                               
+                              <option>
+                                  <a><p>Song</p></a href="#">
+                              </option>
+                               
+                          </select> -->
+                   
+
+<!-- <div class="container">
+<form class="d-flex">
+  <div class="dropdown">
+    <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+      Dropdown
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+      <li><button class="dropdown-item" type="button">Artist</button></li>
+      <li><button class="dropdown-item" type="button">Album</button></li>
+      <li><button class="dropdown-item" type="button">Song</button></li>
+    </ul>
+  </div>
+  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+  
+  <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+</div> -->
+<%- include('../partials/footer.ejs') %>

@@ -1,0 +1,45 @@
+<%- include('../partials/h-showal.ejs') %>
+
+<div>
+<div class="scroll" style="width: 100%; height: 600px; overflow-y: scroll; scrollbar-arrow-color:blue; scrollbar-face-color: #e7e7e7; scrollbar-3dlight-color: #a0a0a0; scrollbar-darkshadow-color:#888888">
+    <div class="card mb-3" style="max-width: 100%;">
+        <div class="row g-0">
+        <div class="col-md-4">
+            <img src="<%= album.image %>" width="500px" height="600px">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+            <h5 class="card-title"><h1><%=album.name%></h1>
+                <br> 
+                
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <p><a href='/song' class="w-100 btn">Peaches</a></p>
+                
+                </div>
+                
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="container" align="center"> 
+        <div class="card w-75">
+            <div class="card-body">
+            <h5 class="card-title">Submitted by <%= album.author.username %></h5>
+            <% if(currentUser && currentUser.isadmin){ %>
+                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                    <p><a href='/album/<%= album._id %>/edit' class="btn btn-warning">Edit</a></p>&nbsp;&nbsp;
+                    <form id = 'delete-form' action = '/album/<%= album._id %>?_method=DELETE' method='POST'>
+                        <button type='submit' class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            <% } %>   
+            </div>
+        </div>
+        <br>
+    </div>
+
+</div>
+
+
+  
+<%- include('../partials/footer.ejs') %>

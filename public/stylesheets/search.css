@@ -1,0 +1,37 @@
+body {
+   overflow: hidden;
+   background-color: #3E1212;
+}
+.container {
+   width: 500px;
+   height: 200px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   margin-top: -100px;
+   margin-left: -250px;
+}
+.form-group input{
+   background-color: #3E1212;
+   color: whitesmoke;
+   border: none;
+   border-bottom: 2px solid whitesmoke;
+   font-weight: 750;
+
+}
+.form-group input:hover{
+   background-color: #3E1212;
+   color: whitesmoke;
+   border: transparent;
+   border-bottom: 2px solid whitesmoke;
+
+}
+.active{
+   color: #3E1212;
+}
+.carousel-indicators button{
+   background-color :#3E1212;
+}
+.form-group input::placeholder {
+   color: whitesmoke;
+ }
