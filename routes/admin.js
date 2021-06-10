@@ -37,16 +37,21 @@ var express     = require('express'),
 }); */
 
 
-
-router.get('/', middleware.isLoggedIn, function(req,res){
-    res.render('admin/index.ejs');
-});
-
 router.get('/addmusic', middleware.isLoggedIn, function(req,res){
     res.render('admin/addmu.ejs');
 });
 
-router.post('/' , middleware.isLoggedIn, upload.single('image'),function(req,res){
+router.get('/' , middleware.isLoggedIn, function (req, res) {
+    Music.find({}, function (err, allMusic) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render('admin/index.ejs', { music: allMusic });
+        }
+    });
+});
+
+/* router.post('/' , middleware.isLoggedIn, upload.single('image'),function(req,res){
     req.body.music.image = '/upload/' + req.file.filename;
     req.body.music.author = {
         id: req.user._id,
@@ -62,6 +67,17 @@ router.post('/' , middleware.isLoggedIn, upload.single('image'),function(req,res
         }
     });
     
+}); */
+
+router.post('/' , middleware.isLoggedIn ,function(req,res){
+    Music.create(req.body.music, function(err, newlyCreate){
+        if(err){
+            req.flash('success','Your music is created.');
+            console.log(err);
+        } else {
+            res.redirect('/admin');
+        }
+    });
 });
 
 

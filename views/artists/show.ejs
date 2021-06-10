@@ -22,11 +22,11 @@
         <div class="card-body">
 
 
-       
+          
           <div class="d-grid gap-2 col-6 mx-auto">
-           
-            <p><a href="/artist" class="w-100 btn btn-primary"></a></p>
-           
+          <% music.forEach(function(music){ %> 
+            <p><a href="#" class="w-100 btn btn-primary"><%=music.song%></a></p>
+          <% }); %>
           </div>
       
 

@@ -1,6 +1,6 @@
 var mongoose    = require('mongoose');
 var Album       = require('./models/album');
-var Artist  = require('./models/artist');
+var Artist      = require('./models/artist');
 var Comment     = require('./models/comment');
 var Home        = require('./models/home');
 var Music       = require('./models/music');
