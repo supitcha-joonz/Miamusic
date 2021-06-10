@@ -94,6 +94,10 @@ body {
     background-color: #3E1212;
     color: whitesmoke;
     text-align: center;
+    font-weight: 1000;
+  }
+  .fw{
+    font-weight: 1000;
   }
   .card{
     background-color: whitesmoke;

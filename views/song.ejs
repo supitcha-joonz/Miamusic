@@ -25,43 +25,9 @@
       </div>
 
 
-      <!-- <div class="card w-25">
-        <div class="card-body">
-          <h5 class="card-title"><%=collection.songname%></h5>
-          <p class="card-text"><%=collection.lysics%></p>
-        </div>
-      </div> -->
     <% }); %>
 </div>
-<br><br>
-<div class="container" align="center"> 
-    <div class="card w-75">
-        <div class="card-body">
-          <% if(currentUser && currentUser.isadmin){ %>
-            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-              <p><a href='/collection/<%= collection._id %>/edit' class="btn btn-warning">Edit</a>&nbsp;&nbsp;&nbsp;
-              <form id = 'delete-form' action = '/collection/<%= collection._id %>?_method=DELETE' method='POST'>
-                  <button type='submit' class="btn btn-danger">Delete</button>
-              </form>
-            </div>
-          <% } %>   
-          <p><a class="btn btn-primary" href = '/collection/<%= collection._id %>/comments/new'>Add new comment</a></p>   
-          <% collection.comments.forEach(function(comment){ %>
-            <p>
-                <strong><%= comment.author.username %></strong> - <%= comment.text %>
-            </p>   
-            <% if(currentUser && currentUser.isadmin){ %>
-              <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                <p><a href='/collection/<%= collection._id %>/comments/<%= comment._id %>/edit' class="btn btn-warning">Edit</a></p>&nbsp;&nbsp;&nbsp;
-                <form id = 'delete-form' action = '/collection/<%= collection._id %>/comments/<%= comment._id %>?_method=DELETE' method='POST'>
-                    <button type='submit' class="btn btn-danger">Delete</button>
-                </form>
-              </div>
-             <% } %>   
-          <% }); %> 
-        </div>
-      </div>
-  </div>
+
 </div>
 
 
