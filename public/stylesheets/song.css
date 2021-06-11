@@ -20,7 +20,17 @@ body {
     background-color: #3E1212;
     color: whitesmoke;
 }
+
 .card-text{
     font-size: 16px;
     font-weight: 600;
 }
+.card::after{
+    background-color: #3E1212;
+    color: whitesmoke;
+}
+.card::after svg{
+    background-color: #3E1212;
+    color: whitesmoke;
+}
+

@@ -44,7 +44,7 @@ router.get('/:comment_id/edit', middleware.checkCommentOwner, function(req, res)
         if(err){
             res.redirect('back');
         } else {
-            res.render('comments/editart.ejs', {collection_id: req.params.id, comment: foundComment});
+            res.render('comments/editart.ejs', {artist_id: req.params.id, comment: foundComment});
         }
     });
 });
@@ -54,7 +54,7 @@ router.put('/:comment_id', middleware.checkCommentOwner, function(req, res){
         if(err){
             res.redirect('back');
         } else {
-            res.redirect('/collection/'+ req.params.id + '/song');
+            res.redirect('/artist/'+ req.params.id + '/song');
         }
     });
 });
@@ -65,7 +65,7 @@ router.delete('/:comment_id', middleware.checkCommentOwner, function(req, res){
             res.redirect('back');
         } else {
             req.flash('success','Your comment is deleted.');
-            res.redirect('/collection/' + req.params.id + '/song');
+            res.redirect('/artist/' + req.params.id + '/song');
         }
     });
 });

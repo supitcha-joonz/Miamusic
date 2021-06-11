@@ -1,5 +1,6 @@
 var Artist     = require('../models/artist'),
     Album      = require('../models/album'),
+    Music      = require('../models/music'),
     Comment    = require('../models/comment');
 
 var middlewareObj = {};
@@ -54,6 +55,27 @@ middlewareObj.checkCommentOwner = function(req, res, next){
                 res.redirect('back');
             } else {
                 if(foundComment.author.id.equals(req.user._id) || req.user.isadmin) {
+                    next();
+                } else {
+                    req.flash('error','You do not have permission to do this action.');
+                    res.redirect('back');
+                }
+            }
+        });
+    } else {
+        req.flash('error','You need to sign in first!!');
+        res.redirect('back');
+    }
+}
+
+middlewareObj.checkMusicOwner = function(req, res, next){
+    if(req.isAuthenticated()){
+        Music.findById(req.params.music_id, function(err, foundMusic){
+            if(err){
+                req.flash('error','Music not found!');
+                res.redirect('back');
+            } else {
+                if(foundMusic.author.id.equals(req.user._id) || req.user.isadmin) {
                     next();
                 } else {
                     req.flash('error','You do not have permission to do this action.');

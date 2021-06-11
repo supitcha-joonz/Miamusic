@@ -92,7 +92,7 @@ router.get('/:id' , function (req,res){
     });
 });
 
-router.get('/:id/edit' , middleware.checkAlbumOwner, function(req,res){
+router.get('/:id/edit' , middleware.checkMusicOwner, function(req,res){
     Music.findById(req.params.id, function(err, foundMusic){
         if(err){
             console.log(err);
@@ -111,6 +111,17 @@ router.put('/:id', upload.single('image'), function(req,res){
             res.redirect('/admin/');
         }else{
             res.redirect('/admin/' + req.params.id);
+        }
+    });
+});
+
+router.delete('/:id' , middleware.checkMusicOwner, function(req,res){
+   Music.findByIdAndRemove(req.params.id, function(err){
+        if(err){
+            res.redirect('/admin/');
+        }else{
+            req.flash('success','Your music is deleted.');
+            res.redirect('/admin/');
         }
     });
 });

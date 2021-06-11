@@ -26,7 +26,12 @@
             <p class="card-text"><%= music.name %></p>
             
             <div class="d-flex justify-content-between">
-              
+              <% if(currentUser && currentUser.isadmin){ %>
+                <a href='/admin/<%= music._id %>/edit' class="btn btn-warning">Edit</a>
+                <form id = 'delete-form' action = '/admin/<%= music._id %>?_method=DELETE' method='POST'>
+                    <button type='submit' class="btn btn-danger">Delete</button>
+                </form>
+             <% } %>  
              
             </div>
           </div>
