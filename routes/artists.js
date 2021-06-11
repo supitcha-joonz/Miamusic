@@ -87,20 +87,11 @@ router.get('/:id', function (req,res) {
         if(err){
             console.log(err);
         } else {
-            res.render('artists/show.ejs', { music: foundMusic, artist: artist})
-        }
-    });
-});
-
-router.get('/:id/song', function (req,res) {
-    Music.find({ name: req.params.id },function (err, foundMusic) {
-        if(err){
-            console.log(err);
-        } else {
             res.render('song.ejs', { music: foundMusic, artist: artist})
         }
     });
 });
+
 
 
 router.get('/new', middleware.isLoggedIn, function(req,res){

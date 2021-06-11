@@ -1,6 +1,6 @@
 
 body {
-    background-color: whitesmoke;
+    background-color: #3E1212;
     overflow: hidden;
   
   }
@@ -11,16 +11,16 @@ body {
     
     
     ::-webkit-scrollbar-track {
-      background: whitesmoke; 
+      background: #3E1212; 
     }
      
     
     ::-webkit-scrollbar-thumb {
-      background: #3E1212; 
+      background: whitesmoke; 
     }
     
     ::-webkit-scrollbar-thumb:hover {
-      background: #3E1212; 
+      background: whitesmoke; 
     }
   
   
@@ -30,6 +30,7 @@ body {
   }
   .navbar a{
       background: transparent;
+    font-weight: 1000;
      
   }
   .navbar a:hover{
@@ -103,8 +104,8 @@ body {
   }
   
   .row {
-      background-color: transparent;
-      
+      background-color: whitesmoke;
+      border-radius: 20px;
   }
   .position-relative {
     background-color: #3E1212;
@@ -121,37 +122,18 @@ body {
   }
   .btn-group {
     text-align: center;
+    margin-left: 140px;
   }
   .btn-group a:hover{
     background-color: #3E1212;
     color: whitesmoke;
   }
-  .w-100 a{
-    background-color: #3E1212;
-    color: whitesmoke;
-    text-decoration: none;
-  }
-
-  .card-body{
-    background-color: whitesmoke;
+  .fw{
     color: #3E1212;
-    border-radius: 20px;
+    text-align: center;
+    font-weight: 1000;
   }
-  .card {
-    margin-bottom: 10px;
-    background-color: #3E1212;
-    border-radius: 20px;
-  }
-  .card-body:hover{
-    background-color: #3E1212;
-    color: whitesmoke;
-    border-radius: 20px;
-  }
-  .card:hover{
-    margin-bottom: 10px;
+  .card2{
     background-color: whitesmoke;
-    border-radius: 20px;
   }
-  svg,h5{
-    display: inline;
-  }
+  
