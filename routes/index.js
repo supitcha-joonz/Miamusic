@@ -163,9 +163,13 @@ Collection.find({name: new RegExp(req.params.name, 'i')}, function(err, foundCol
 }); */
 
 router.get('/package', function(req,res){
-res.render('packages/show.ejs');
+    res.render('packages/show.ejs');
 
 });
+router.get('/package/payment',middleware.isLoggedIn, function(req,res){
+    res.render('payment/pay.ejs');
+    
+    });
 
 
 

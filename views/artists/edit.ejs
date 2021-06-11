@@ -1,19 +1,24 @@
 <%- include('../partials/header.ejs') %>
 
 <div class="container">
-<form action="/artist/<%= artist._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-    <div class="mb-3">
-      <label class="form-label">Statue name</label>
-      <input type="text" class="form-control" name="artist[name]" placeholder="<%= artist.name %>" value="<%= artist.name %>">
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <form action="/artist/<%= artist._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label class="form-label">Statue name</label>
+          <input type="text" class="form-control" name="artist[name]" placeholder="<%= artist.name %>" value="<%= artist.name %>">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Image</label>
+          <img src="<%= artist.image %>" width="300px">
+          <input type="file" class="form-control" name="image" accept="image/*">
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>&nbsp;&nbsp;
+        <a href="/artist">Go Back</a>
+      </form>
     </div>
-    <div class="mb-3">
-      <label class="form-label">Image</label>
-      <img src="<%= artist.image %>" width="300px">
-      <input type="file" class="form-control" name="image" accept="image/*">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-    <a href="/artist">Go Back</a>
-  </form>
+  </div>
 </div>
 
 

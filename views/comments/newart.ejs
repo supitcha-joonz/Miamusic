@@ -1,14 +1,14 @@
 <%- include('../partials/header.ejs') %>
 <div class='container'>
   <br><br>
-<form action='/collection/<%= collection._id %>/comments' method='POST'>
+<form action='/artist/<%= artist_name %>/comments' method='POST'>
   
       <label  class="form-label">Comment</label>
       <input type="text" class="form-control" name='comment[text]' placeholder='Comment'>
  
   <br>
     <button type="submit" class="btn btn-primary">Submit</button>
-    <a href='/collection/<%= collection._id %>/song'>Go back</a>
+    <a href='/artist/<%= artist.name %>'>Go back</a>
 
  </form>   
 </div>

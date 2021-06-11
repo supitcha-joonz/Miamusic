@@ -92,6 +92,30 @@ router.get('/:id' , function (req,res){
     });
 });
 
+router.get('/:id/edit' , middleware.checkAlbumOwner, function(req,res){
+    Music.findById(req.params.id, function(err, foundMusic){
+        if(err){
+            console.log(err);
+        }else {
+            res.render('admin/edit.ejs' , {music: foundMusic});
+        }
+    });
+});
+
+router.put('/:id', upload.single('image'), function(req,res){
+    if(req.file){
+        req.body.music.image = '/upload/' + req.file.filename;
+    }
+    Music.findByIdAndUpdate(req.params.id, req.body.music, function(err, updatedmusic){
+        if(err){
+            res.redirect('/admin/');
+        }else{
+            res.redirect('/admin/' + req.params.id);
+        }
+    });
+});
+
+
 
 function escapeRegex(text) {
     return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");

@@ -1,4 +1,4 @@
-var Artist = require('../models/artist'),
+var Artist     = require('../models/artist'),
     Album      = require('../models/album'),
     Comment    = require('../models/comment');
 

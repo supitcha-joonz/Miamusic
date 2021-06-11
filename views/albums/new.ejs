@@ -1,18 +1,23 @@
-<%- include('../partials/header.ejs') %>
+<%- include('../partials/h-edit.ejs') %>
 
 <div class="container">
-<form action="/album" method="POST" enctype="multipart/form-data">
-    <div class="mb-3">
-      <label class="form-label">Staus name</label>
-      <input type="text" class="form-control" name="album[name]" placeholder="Name">
+<br><br>
+  <div class="card w-100">
+    <div class="card-body">
+      <form action="/album" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label class="form-label">Name Album</label>
+          <input type="text" class="form-control" name="album[name]" placeholder="Name">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Image</label>
+          <input type="file" class="form-control" name="image" accept="image/*">
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>&nbsp;&nbsp;
+        <a href="/album">Go Back</a>
+      </form>
     </div>
-    <div class="mb-3">
-      <label class="form-label">Image</label>
-      <input type="file" class="form-control" name="image" accept="image/*">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-    <a href="/album">Go Back</a>
-  </form>
+  </div>
 </div>
 
 
