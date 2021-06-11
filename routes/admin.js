@@ -50,7 +50,7 @@ router.get("/", function(req, res){
                 req.flash('error','Music not found!');
                 res.redirect('back');
               }
-              res.render("/artist/<%= artist.name %>",{music:allMusic, noMatch: noMatch});
+              res.render("song.ejs",{music:allMusic, noMatch: noMatch});
            }
         });
     } else {
@@ -59,7 +59,7 @@ router.get("/", function(req, res){
            if(err){
                console.log(err);
            } else {
-              res.render("/artist/<%= artist.name %>",{musict:allMusic, noMatch: noMatch});
+              res.render("song.ejs",{musict:allMusic, noMatch: noMatch});
            }
         });
     }
