@@ -1,13 +1,13 @@
-<%- include('../partials/header.ejs') %>
+<%- include('../partials/h-edit.ejs') %>
 <div class='container'>
 <h1>Edit comment</h1>    
-<form action='/artist/<%= artist_id %>/comments/<%= comment._id %>?_method=PUT' method='POST'>
+<form action='/artist/<%= artist._id %>/comments/<%= comment._id %>?_method=PUT' method='POST'>
       <label  class="form-label">Comment</label>
       <input type="text" class="form-control" name='comment[text]' placeholder='<%= comment.text %>' value = '<%= comment.text %>'>
   
     <br>
     <button type="submit" class="btn btn-primary">Submit</button>
-    <a href='/artist'>Go back</a>
+    <a href='/artist/<%= artist._id %>'>Go back</a>
 </form>
 </div>
 

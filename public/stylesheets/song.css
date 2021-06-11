@@ -25,12 +25,7 @@ body {
     font-size: 16px;
     font-weight: 600;
 }
-.card::after{
-    background-color: #3E1212;
-    color: whitesmoke;
-}
-.card::after svg{
-    background-color: #3E1212;
-    color: whitesmoke;
+.card{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 

@@ -23,6 +23,7 @@ var express     = require('express'),
     },
     upload  = multer({storage: storage, fileFilter: imageFilter}),
     Music  = require('../models/music'),
+    Comment  = require('../models/comment'),
     Artist  = require('../models/artist');
 
 /* router.get('/', function(req,res){
@@ -36,6 +37,33 @@ var express     = require('express'),
     
 }); */
 
+router.get("/", function(req, res){
+    var noMatch = null;
+    if(req.query.search) {
+        const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+       
+        Music.find({name: regex}, function(err, allMusic){
+           if(err){
+               console.log(err);
+           } else {
+              if(allMusic.length < 1) {
+                req.flash('error','Music not found!');
+                res.redirect('back');
+              }
+              res.render("/artist/<%= artist.name %>",{music:allMusic, noMatch: noMatch});
+           }
+        });
+    } else {
+        
+        Music.find({}, function(err, allMusic){
+           if(err){
+               console.log(err);
+           } else {
+              res.render("/artist/<%= artist.name %>",{musict:allMusic, noMatch: noMatch});
+           }
+        });
+    }
+});
 
 router.get('/addmusic', middleware.isLoggedIn, function(req,res){
     res.render('admin/addmu.ejs');
@@ -82,12 +110,23 @@ router.post('/' , middleware.isLoggedIn, upload.single('image'),function(req,res
 
 
 
-router.get('/:id' , function (req,res){
+/* router.get('/:id' , function (req,res){
     Music.find({ name:req.params.id }, function(err,foundMusic){
         if(err) {
             console.log(err);
         } else {
             res.render('song.ejs', { music: foundMusic, artist: artist })
+        }
+    });
+});
+ */
+
+router.get('/:id' , function(req,res){
+    Music.findById(req.params.id).populate('comments').exec(function(err, foundMusic){
+        if(err){
+            console.log(err);
+        } else {
+            res.render('song.ejs', {music: foundMusic});
         }
     });
 });

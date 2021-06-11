@@ -36,7 +36,7 @@
                 <% if(currentUser && currentUser.isadmin){ %>
                   <a href='/artist/<%= artist._id %>/edit' class="btn btn-warning">Edit</a>
                   <form id = 'delete-form' action = '/artist/<%= artist._id %>?_method=DELETE' method='POST'>
-                      <button type='submit' class="btn btn-danger">Delete</button>
+                      <button type='submit' class="btn btn-danger" onclick="return confirm('Are you sure you want to Remove?');">Delete</button>
                   </form>
                <% } %> 
                

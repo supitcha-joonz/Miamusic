@@ -68,25 +68,25 @@ User.register(newUser, req.body.password, function(err, user){
 });
 
 router.get('/login', function(req,res){
-res.render('login.ejs');
+    res.render('login.ejs');
 
 });
 router.post('/login' , passport.authenticate('local' ,
 {
-successRedirect: '/' ,
-failureRedirect: '/login',
-successFlash: true,
-failureFlash: true,
-successFlash: 'Successfully log in',
-failureFlash: 'Invalid username or password'
+    successRedirect: '/' ,
+    failureRedirect: '/login',
+    successFlash: true,
+    failureFlash: true,
+    successFlash: 'Successfully log in',
+    failureFlash: 'Invalid username or password'
 }), function(req,res){
 
 });
 
 router.get('/logout', function(req,res){
-req.logout();
-req.flash('success','Logged you out success.');
-res.redirect('/');
+    req.logout();
+    req.flash('success','Logged you out success.');
+    res.redirect('/');
 });
 
 router.get('/user/:id', function(req, res){
@@ -135,32 +135,15 @@ User.findByIdAndUpdate(req.params.id, req.body.user, function(err, updatedUser){
 });
 
 router.get('/contact', function(req,res){
-res.render('contacts/index.ejs');
+    res.render('contacts/index.ejs');
 
 });
 
 router.get('/search', function(req,res){
-res.render('search/index.ejs');
+    res.render('search/index.ejs');
 
 });
 
-/* router.post('/search-astist', function(req,res){
-console.log("Trying to search artist...");
-console.log(req.body.search_artist);
-var name = req.body.search_artist;
-res.redirect('/search-artist/' + name);
-});
-
-router.get('/search-artist/:name', function(req,res){
-Collection.find({name: new RegExp(req.params.name, 'i')}, function(err, foundCollection){
-    if(err){
-        console.log(err);
-    } else {
-        console.log(foundCollection);
-        res.render('collections/song.ejs', {allCollection_now: foundCollection, sort: req.params.name});
-    }
-});
-}); */
 
 router.get('/package', function(req,res){
     res.render('packages/show.ejs');
@@ -169,7 +152,7 @@ router.get('/package', function(req,res){
 router.get('/package/payment',middleware.isLoggedIn, function(req,res){
     res.render('payment/pay.ejs');
     
-    });
+});
 
 
 

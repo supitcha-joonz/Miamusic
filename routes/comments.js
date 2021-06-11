@@ -1,22 +1,23 @@
-var express = require('express'),
-    router  = express.Router({mergeParams: true}),
-    middleware = require('../middleware'),
-    Artist = require('../models/artist'),
-    Album      = require('../models/album'),
-    Comment    = require('../models/comment');
+var express         = require('express'),
+    router          = express.Router({mergeParams: true}),
+    middleware      = require('../middleware'),
+    Music          = require('../models/music'),
+    Artist          = require('../models/artist'),
+    Album           = require('../models/album'),
+    Comment         = require('../models/comment');
 
 router.get('/new', middleware.isLoggedIn, function(req, res){
-    Artist.findById(req.params.id, function(err, foundArtist){
+    Music.findById(req.params.id, function(err, foundMusic){
         if(err){
             console.log(err);
         } else {
-            res.render("comments/newart.ejs", {artist: foundArtist});
+            res.render("comments/newart.ejs", {music: foundMusic});
         }
     });    
 });
 
 router.post('/', middleware.isLoggedIn, function(req, res){
-    Artist.findById(req.params.id, function(err, foundArtist){
+    Music.findById(req.params.id, function(err, foundMusic){
         if(err){
             console.log(err);
             res.redirect('/artist');
@@ -28,10 +29,10 @@ router.post('/', middleware.isLoggedIn, function(req, res){
                     comment.author.id = req.user._id;
                     comment.author.username = req.user.username;
                     comment.save();
-                    foundArtist.comments.push(comment);
-                    foundArtist.save();
+                    foundMusic.comments.push(comment);
+                    foundMusic.save();
                     req.flash('success','Your comment is added.');
-                    res.redirect('/artist/'+ foundArtist._id + '/song');
+                    res.redirect('/artist/'+ foundMusic._id);
                 }
             });
         }
@@ -54,7 +55,7 @@ router.put('/:comment_id', middleware.checkCommentOwner, function(req, res){
         if(err){
             res.redirect('back');
         } else {
-            res.redirect('/artist/'+ req.params.id + '/song');
+            res.redirect('/artist/'+ req.params.id);
         }
     });
 });
@@ -65,7 +66,7 @@ router.delete('/:comment_id', middleware.checkCommentOwner, function(req, res){
             res.redirect('back');
         } else {
             req.flash('success','Your comment is deleted.');
-            res.redirect('/artist/' + req.params.id + '/song');
+            res.redirect('/artist/' + req.params.id);
         }
     });
 });

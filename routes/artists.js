@@ -64,6 +64,7 @@ router.get("/", function(req, res){
     }
 });
 
+
 router.post('/' , middleware.isLoggedIn, upload.single('image'),function(req,res){
     req.body.artist.image = '/upload/' + req.file.filename;
     req.body.artist.author = {
@@ -82,6 +83,10 @@ router.post('/' , middleware.isLoggedIn, upload.single('image'),function(req,res
     
 });
 
+router.get('/new', middleware.isLoggedIn, function(req,res){
+    res.render('artists/new.ejs');
+});
+
 router.get('/:id', function (req,res) {
     Music.find({ name: req.params.id },function (err, foundMusic) {
         if(err){
@@ -94,19 +99,16 @@ router.get('/:id', function (req,res) {
 
 
 
-router.get('/new', middleware.isLoggedIn, function(req,res){
-    res.render('artists/new.ejs');
-});
 
-router.get('/:id' , function(req,res){
-    Artist.findById(req.params.id).populate('comments').exec(function(err, foundArtist){
+/* router.get('/:id' , function(req,res){
+    Music.findById(req.params.id).populate('comments').exec(function(err, foundMusic){
         if(err){
             console.log(err);
         } else {
-            res.render('song.ejs', {artist: foundArtist});
+            res.render('song.ejs', {music: foundMusic});
         }
     });
-});
+}); */
 
 router.get('/:id/edit' , middleware.checkArtistOwner, function(req,res){
     Artist.findById(req.params.id, function(err, foundArtist){
