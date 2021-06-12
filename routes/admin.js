@@ -113,15 +113,15 @@ router.get('/:id/edit' , middleware.checkMusicOwner, function(req,res){
     });
 });
 
-router.put('/:id', upload.single('image'), function (req, res) {
+router.put('/song/:id', upload.single('image'), function (req, res) {
     if (req.file) {
         req.body.music.image = '/upload/' + req.file.filename;
     }
     Music.findByIdAndUpdate(req.params.id, req.body.music, function (err, updatedmusic) {
         if (err) {
-            res.redirect('/artist');
+            res.redirect('/admin');
         } else {
-            res.redirect('/artist');
+            res.redirect('/admin');
         }
     });
 });
