@@ -23,7 +23,6 @@ var express     = require('express'),
     },
     upload  = multer({storage: storage, fileFilter: imageFilter}),
     Music  = require('../models/music'),
-    Comment  = require('../models/comment'),
     Artist  = require('../models/artist');
 
 /* router.get('/', function(req,res){
