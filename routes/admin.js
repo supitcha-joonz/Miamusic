@@ -36,33 +36,6 @@ var express     = require('express'),
     
 }); */
 
-router.get("/", function(req, res){
-    var noMatch = null;
-    if(req.query.search) {
-        const regex = new RegExp(escapeRegex(req.query.search), 'gi');
-       
-        Music.find({name: regex}, function(err, allMusic){
-           if(err){
-               console.log(err);
-           } else {
-              if(allMusic.length < 1) {
-                req.flash('error','Music not found!');
-                res.redirect('back');
-              }
-              res.render("song.ejs",{music:allMusic, noMatch: noMatch});
-           }
-        });
-    } else {
-        
-        Music.find({}, function(err, allMusic){
-           if(err){
-               console.log(err);
-           } else {
-              res.render("song.ejs",{musict:allMusic, noMatch: noMatch});
-           }
-        });
-    }
-});
 
 router.get('/addmusic', middleware.isLoggedIn, function(req,res){
     res.render('admin/addmu.ejs');
