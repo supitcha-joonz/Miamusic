@@ -22,6 +22,7 @@ imageFilter = function(req,file,callback){
     callback(null, true);
 },
 upload  = multer({storage: storage, fileFilter: imageFilter}),
+music   = require('../models/music'),
 passport    = require('passport');
 
 
