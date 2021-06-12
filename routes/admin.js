@@ -25,16 +25,6 @@ var express     = require('express'),
     Music  = require('../models/music'),
     Artist  = require('../models/artist');
 
-/* router.get('/', function(req,res){
-    Album.find({}, function(err, allAlbum){
-        if(err){
-            console.log(err);
-        }else{
-            res.render('albums/index.ejs', {album: allAlbum}); 
-        }
-    });
-    
-}); */
 
 
 router.get('/addmusic', middleware.isLoggedIn, function(req,res){
