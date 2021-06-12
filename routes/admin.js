@@ -113,29 +113,30 @@ router.get('/:id/edit' , middleware.checkMusicOwner, function(req,res){
     });
 });
 
-router.put('/:id', upload.single('image'), function(req,res){
-    if(req.file){
+router.put('/:id', upload.single('image'), function (req, res) {
+    if (req.file) {
         req.body.music.image = '/upload/' + req.file.filename;
     }
-    Music.findByIdAndUpdate(req.params.id, req.body.music, function(err, updatedmusic){
-        if(err){
-            res.redirect('/admin/');
-        }else{
-            res.redirect('/admin/' + req.params.id);
+    Music.findByIdAndUpdate(req.params.id, req.body.music, function (err, updatedmusic) {
+        if (err) {
+            res.redirect('/artist');
+        } else {
+            res.redirect('/artist');
         }
     });
 });
 
-router.delete('/:id' , middleware.checkMusicOwner, function(req,res){
-   Music.findByIdAndRemove(req.params.id, function(err){
-        if(err){
+router.delete('/:id', function (req, res) {
+    Music.findByIdAndRemove(req.params.id, function (err) {
+        if (err) {
+            // console.log(err);
             res.redirect('/admin/');
-        }else{
-            req.flash('success','Your music is deleted.');
+        } else {
             res.redirect('/admin/');
         }
     });
 });
+
 
 
 
