@@ -103,15 +103,15 @@ router.get('/:id/edit' , middleware.checkMusicOwner, function(req,res){
     });
 });
 
-router.put('/song/:id', upload.single('image'), function (req, res) {
-    if (req.file) {
+router.put('/:id', upload.single('image'), function(req,res){
+    if(req.file){
         req.body.music.image = '/upload/' + req.file.filename;
     }
-    Music.findByIdAndUpdate(req.params.id, req.body.music, function (err, updatedmusic) {
-        if (err) {
-            res.redirect('/admin');
-        } else {
-            res.redirect('/admin');
+    Music.findByIdAndUpdate(req.params.id, req.body.music, function(err, updatedMusic){
+        if(err){
+            res.redirect('/admin/');
+        }else{
+            res.redirect('/admin/');
         }
     });
 });

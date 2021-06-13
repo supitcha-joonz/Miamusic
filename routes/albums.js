@@ -86,16 +86,6 @@ router.get('/new', middleware.isLoggedIn, function(req,res){
     res.render('albums/new.ejs');
 });
 
-router.get('/:id' , function(req,res){
-    Album.findById(req.params.id).populate('comments').exec(function(err, foundAlbum){
-        if(err){
-            console.log(err);
-        } else {
-            res.render('albums/show.ejs', {album: foundAlbum});
-        }
-    });
-});
-
 router.get('/:id/edit' , middleware.checkAlbumOwner, function(req,res){
     Album.findById(req.params.id, function(err, foundAlbum){
         if(err){
@@ -110,11 +100,11 @@ router.put('/:id', upload.single('image'), function(req,res){
     if(req.file){
         req.body.album.image = '/upload/' + req.file.filename;
     }
-    Album.findByIdAndUpdate(req.params.id, req.body.album, function(err, updatedalbum){
+    Album.findByIdAndUpdate(req.params.id, req.body.album, function(err, updatedAlbum){
         if(err){
             res.redirect('/album/');
         }else{
-            res.redirect('/album/' + req.params.id);
+            res.redirect('/album/');
         }
     });
 });

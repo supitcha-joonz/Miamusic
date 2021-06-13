@@ -97,38 +97,25 @@ router.get('/:id', function (req,res) {
     });
 });
 
-
-
-
-/* router.get('/:id' , function(req,res){
-    Music.findById(req.params.id).populate('comments').exec(function(err, foundMusic){
-        if(err){
-            console.log(err);
-        } else {
-            res.render('song.ejs', {music: foundMusic});
-        }
-    });
-}); */
-
-router.get('/:id/edit' , middleware.checkArtistOwner, function(req,res){
+router.get('/:id/edit', middleware.checkArtistOwner, function(req, res){
     Artist.findById(req.params.id, function(err, foundArtist){
         if(err){
             console.log(err);
-        }else {
-            res.render('artists/edit.ejs' , {artist: foundArtist});
+        } else {
+            res.render('artists/edit.ejs', {artist: foundArtist})
         }
     });
 });
 
-router.put('/:id', upload.single('image'), function(req,res){
+router.put('/:id', upload.single('image'), function(req, res){
     if(req.file){
-        req.body.artist.image = '/upload/' + req.file.filename;
+        req.body.artist.image = '/upload/'+ req.file.filename;
     }
-    Artist.findByIdAndUpdate(req.params.id, req.body.artist, function(err, updatedartist){
+    Artist.findByIdAndUpdate(req.params.id, req.body.artist, function(err, updatedArtist){
         if(err){
             res.redirect('/artist/');
-        }else{
-            res.redirect('/artist/' + req.params.id);
+        } else {
+            res.redirect('/artist/');
         }
     });
 });
