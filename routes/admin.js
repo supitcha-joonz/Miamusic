@@ -72,16 +72,6 @@ router.post('/' , middleware.isLoggedIn, upload.single('image'),function(req,res
 
 
 
-/* router.get('/:id' , function (req,res){
-    Music.find({ name:req.params.id }, function(err,foundMusic){
-        if(err) {
-            console.log(err);
-        } else {
-            res.render('song.ejs', { music: foundMusic, artist: artist })
-        }
-    });
-});
- */
 
 router.get('/:id' , function(req,res){
     Music.findById(req.params.id).populate('comments').exec(function(err, foundMusic){
@@ -93,12 +83,12 @@ router.get('/:id' , function(req,res){
     });
 });
 
-router.get('/:id/edit' , middleware.checkMusicOwner, function(req,res){
+router.get('/:id/editmu' , middleware.checkMusicOwner, function(req,res){
     Music.findById(req.params.id, function(err, foundMusic){
         if(err){
             console.log(err);
         }else {
-            res.render('admin/edit.ejs' , {music: foundMusic});
+            res.render('admin/editmu.ejs' , {music: foundMusic});
         }
     });
 });
@@ -109,9 +99,9 @@ router.put('/:id', upload.single('image'), function(req,res){
     }
     Music.findByIdAndUpdate(req.params.id, req.body.music, function(err, updatedMusic){
         if(err){
-            res.redirect('/admin/');
+            res.redirect('/artist');
         }else{
-            res.redirect('/admin/');
+            res.redirect('/artist');
         }
     });
 });
