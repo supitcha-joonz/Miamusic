@@ -1,3 +1,82 @@
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  
+  ::-webkit-scrollbar-track {
+    background: whitesmoke; 
+  }
+   
+  
+  ::-webkit-scrollbar-thumb {
+    background: #3E1212; 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3E1212; 
+  }
+
+
+  .navbar {
+	background: whitesmoke;
+}
+.navbar a{
+	background: transparent;
+  font-weight: 1000;
+   
+}
+.navbar a:hover{
+
+    color: rgb(151, 117, 117);
+}
+
+.nav-item a{
+    color: #3E1212;
+    text-decoration: none;
+    background-color: transparent;
+  }
+
+  .nav-item a:hover{
+    color: rgb(182, 107, 107);
+    
+  }
+  .navbar-brand {
+    color: #3E1212;
+    font-family: 'Berkshire Swash';
+    background-color: whitesmoke;
+    font-size: 26px;
+  }
+
+
+
+  .nav-link {
+    color: #3E1212;
+    text-decoration: none;
+    background-color: transparent;
+    border-radius: 20px;
+
+  }
+
+  .nav-link:hover {
+    color: rgb(182, 107, 107);
+    text-decoration: none;
+    background-color: transparent;
+
+  }
+
+  .btn{
+    /* border-color: #A09694 ; */
+    /* background: #3E1212; */
+    border-radius: 50px;
+    border: 20;
+    color: #3E1212;
+  }
+
+  .btn:hover{
+    color: rgb(182, 107, 107);
+
+  }
 body {
     background-color: #3E1212 ;
     overflow: hidden;
@@ -44,5 +123,4 @@ button svg{
 button svg:hover{
     color: rgb(219, 70, 70);
 }
-
 

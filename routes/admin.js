@@ -59,6 +59,7 @@ router.post('/' , middleware.isLoggedIn, upload.single('image'),function(req,res
     
 });
 
+
 /* router.post('/' , middleware.isLoggedIn ,function(req,res){
     Music.create(req.body.music, function(err, newlyCreate){
         if(err){

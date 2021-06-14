@@ -110,6 +110,8 @@ router.post("/:id", function (req, res) {
     });
 });
 
+
+
 router.get('/:id/edit', middleware.checkArtistOwner, function(req, res){
     Artist.findById(req.params.id, function(err, foundArtist){
         if(err){
