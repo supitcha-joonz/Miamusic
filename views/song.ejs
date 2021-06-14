@@ -16,14 +16,24 @@
         <div class="col-md-8">
           <div class="card-body">
             <h3 class="card-title"><%=music.song%></h3>
-            <h5 class="card-title"><a href="/" class="btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-            </svg></a>&nbsp;&nbsp;&nbsp;<%=music.name%></h5>
+            <h5><%=music.name%></h5>
           
           </div>
         </div>
       </div>
     </div>
+    <% if(currentUser) { %>
+      <form id="favorite" action="/artist/<%= music.name %>" method="POST">
+          <input type="text" name="fav[username]" value="<%= currentUser.username %>" hidden />
+          <input type="text" name="fav[song]" value="<%= music.song %>" hidden />
+          <input type="text" name="fav[name]" value="<%= music.name %>" hidden />
+          <input type="text" name="fav[image]" value="<%= music.image %>" hidden />
+          <button id="favadd"aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+          </svg></button>
+      </form>
+    <% }%>
+    
   </button>
   <ul class="dropdown-menu">
     <div class="container">
@@ -41,6 +51,7 @@
       </div>
   </ul>
 </div>
+
 
     <% }); %>
 </div>

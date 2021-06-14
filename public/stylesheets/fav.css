@@ -1,0 +1,157 @@
+body {
+    background-color: #3E1212;
+    overflow: hidden;
+  
+  }
+  
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    
+    
+    ::-webkit-scrollbar-track {
+      background: #3E1212; 
+    }
+     
+    
+    ::-webkit-scrollbar-thumb {
+      background: whitesmoke; 
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: whitesmoke; 
+    }
+  
+  
+  
+    .navbar {
+      background: whitesmoke;
+  }
+  .navbar a{
+      background: transparent;
+    font-weight: 1000;
+     
+  }
+  .navbar a:hover{
+  
+      color: rgb(151, 117, 117);
+  }
+  
+  .nav-item a{
+      color: #3E1212;
+      text-decoration: none;
+      background-color: transparent;
+      font-weight: 1000;
+    }
+  
+    .nav-item a:hover{
+      color: rgb(182, 107, 107);
+      
+    }
+    .navbar-brand {
+      color: #3E1212;
+      font-family: 'Berkshire Swash';
+      background-color: whitesmoke;
+      font-size: 26px;
+    }
+  
+  
+  
+    .nav-link {
+      color: #3E1212;
+      text-decoration: none;
+      background-color: transparent;
+      border-radius: 20px;
+  
+    }
+  
+    .nav-link:hover {
+      color: rgb(182, 107, 107);
+      text-decoration: none;
+      background-color: transparent;
+  
+    }
+  
+    .btn{
+      border-radius: 50px;
+      border: 20;
+      color: #3E1212;
+    }
+  
+    .btn:hover{
+      color: rgb(182, 107, 107);
+  
+    }
+    .album{
+      background: #3E1212;
+    }
+    .card {
+        text-align: center;
+        margin: 30px;
+        border-radius: 10px;
+
+    }
+    .dropdown-menu {
+        background-color: #3E1212;
+    }
+    .dropdown-item{
+        color: whitesmoke;
+    }
+    .dropdown-menu:hover{
+      color: whitesmoke;
+  
+    }
+    .dropdown-item:hover{
+      color: #3E1212;
+  }
+  
+  .row {
+      background-color: #3E1212;
+      color: whitesmoke;
+      border-radius: 5px;
+     
+  }
+  .row svg {
+   
+    color: whitesmoke;
+}
+
+.row svg:hover {
+    
+    color: rgb(197, 77, 77);
+}
+  .position-relative {
+    background-color: #3E1212;
+    color: whitesmoke;
+    font-weight: 1000;
+    font-size: 55px;
+  }
+  .me-md-3 {
+    background-color: whitesmoke;
+  }
+  .song {
+    background-color: #3E1212;
+    color: whitesmoke;
+  }
+  .btn-group {
+    text-align: center;
+    margin-left: 140px;
+  }
+  .btn-group a:hover{
+    background-color: #3E1212;
+    color: whitesmoke;
+  }
+  .fw{
+    color: #3E1212;
+    text-align: center;
+    font-weight: 1000;
+  }
+  #favde {
+      background-color: transparent;
+      border: none;
+  }
+  .card2 {
+      margin-left: 250px;
+      margin-bottom: 25px;
+      border-radius: 10px;
+  }

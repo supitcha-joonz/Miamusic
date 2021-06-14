@@ -23,6 +23,7 @@ var express     = require('express'),
     },
     upload  = multer({storage: storage, fileFilter: imageFilter}),
     music   = require('../models/music'),
+    Favorite   = require('../models/favorite'),
     artist  = require('../models/artist');
 
 /* router.get('/', function(req,res){
@@ -97,6 +98,18 @@ router.get('/:id', function (req,res) {
     });
 });
 
+router.post("/:id", function (req, res) {
+    console.log(req.body.fav);
+    Favorite.create(req.body.fav, function (err, newlyCreated) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(newlyCreated);
+        res.redirect("/artist/" + req.params.id);
+      }
+    });
+});
+
 router.get('/:id/edit', middleware.checkArtistOwner, function(req, res){
     Artist.findById(req.params.id, function(err, foundArtist){
         if(err){
@@ -119,7 +132,6 @@ router.put('/:id', upload.single('image'), function(req, res){
         }
     });
 });
-
 
 router.delete('/:id' , middleware.checkArtistOwner, function(req,res){
    Artist.findByIdAndRemove(req.params.id, function(err){

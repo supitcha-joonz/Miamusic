@@ -28,4 +28,21 @@ body {
 .card{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
+#favorite{
+    width: 10px;
+    background-color: transparent;
+    border: none;
+}
+#favadd {
+    width: 20px;
+    background-color: transparent;
+    border: none;
+}
+button svg{
+    color: whitesmoke;
+}
+button svg:hover{
+    color: rgb(219, 70, 70);
+}
+
 

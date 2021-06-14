@@ -63,6 +63,7 @@
                   <% if(currentUser && currentUser.isadmin){ %>
                   <li><a class="dropdown-item" href="/admin">Admin</a></li>
                   <% } %>
+                  <li><a class="dropdown-item" href="/favorite/<%= currentUser.username %>">Favorite</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="/logout" onclick="return confirm('Are you sure you want to Logout?');">Logout</a></li>
                 </ul>

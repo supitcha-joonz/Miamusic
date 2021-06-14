@@ -25,48 +25,18 @@ var express     = require('express'),
         callback(null, true);
     },
     upload  = multer({storage: storage, fileFilter: imageFilter}),
-    Collection  = require('../models/collection'),
     Music  = require('../models/music');
 
-/* router.get('/', function(req,res){
-    Collection.find({}, function(err, allCollection){
-        if(err){
+
+router.get('/' , function (req, res) {
+    Music.find({}, function (err, allMusic) {
+        if (err) {
             console.log(err);
-        }else{
-            res.render('collections/index.ejs', {collection: allCollection}); 
+        } else {
+            res.render('admin/index.ejs', { music: allMusic });
         }
     });
-    
-}); */
-
-/* router.get("/", function(req, res){
-    var noMatch = null;
-    if(req.query.search) {
-        const regex = new RegExp(escapeRegex(req.query.search), 'gi');
-        
-        Music.find({name: regex}, function(err, allMusic){
-           if(err){
-               console.log(err);
-           } else {
-              if(allMusic.length < 1) {
-                req.flash('error','Music not found!');
-                res.redirect('back');
-              }
-              res.render("song.ejs",{music:allMusic, noMatch: noMatch});
-           }
-        });
-    } else {
-       
-        Music.find({}, function(err, allMusic){
-           if(err){
-               console.log(err);
-           } else {
-              res.render("song.ejs",{music:allMusic, noMatch: noMatch});
-           }
-        });
-    }
 });
-
 
 
 
@@ -79,4 +49,5 @@ function escapeRegex(text) {
 
 
 
-module.exports  = router; */
+module.exports  = router;
+ */

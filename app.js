@@ -9,6 +9,7 @@ var   express           = require('express'),
       Artist            = require('./models/artist'),
       Comment           = require('./models/comment'),
       Album             = require('./models/album'),
+      Favorite              = require('./models/favorite'),
       Home              = require('./models/home'),
       User              = require('./models/user'),
       seedDB            = require('./seed');    
@@ -18,6 +19,7 @@ var artistRoutes        = require('./routes/artists'),
     commentRoutes       = require('./routes/comments'),
     albumRoutes         = require('./routes/albums'),
     adminRoutes         = require('./routes/admin'),
+    favoriteRoutes      = require('./routes/favorite'),
     indexRoutes         = require('./routes/index');
    
 
@@ -61,11 +63,7 @@ app.use('/', indexRoutes);
 
 app.use('/admin', adminRoutes);
 
-
-
-
-
-
+app.use('/favorite', favoriteRoutes);
 
 
 

@@ -160,4 +160,8 @@ router.get('/package/payment',middleware.isLoggedIn, function(req,res){
 
 
 
+
+
+
+
 module.exports  = router;
