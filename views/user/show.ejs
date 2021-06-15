@@ -18,29 +18,5 @@
   </div>
 </section>
 
-<h1>Favorite </h1>
-    <h5>The song has been downloaded successfully</h5><br>
-
-    <% favorite.forEach(function(favorite){ %>
-      <div class="item item--css-clip-path">
-        <div class="demo">
-          
-          <a href="/artist/melody/<%= favorite.music %>">
-            <img src="<%= favorite.image %>" height="140px" width="140px" alt="" />
-          </a>
-        </div>
-        <div class="text">
-          <code class="music">
-            <h4><%= favorite.music %></h4>
-            <h6><%= favorite.name %></h6>
-            
-            <form id = 'favo-form' action="/favorite/<%= favorite._id %>?_method=DELETE" method="POST">
-              <a href="/favorite/<%= favorite._id %>"><button class="fas fa-heart-broken"></button></a>
-            </form>
-          </code>
-        </div>
-        
-      </div>
-<% }); %>
 
 <%- include('../partials/footer.ejs') %>
