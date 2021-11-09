@@ -5,16 +5,16 @@
   
   
   ::-webkit-scrollbar-track {
-    background: whitesmoke; 
+    background: #3E1212; 
   }
    
   
   ::-webkit-scrollbar-thumb {
-    background: #3E1212; 
+    background: whitesmoke; 
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: #3E1212; 
+    background: whitesmoke; 
   }
 
 
@@ -117,7 +117,7 @@ body {
     background-color: transparent;
     border: none;
 }
-button svg{
+/*button svg{
     color: whitesmoke;
 }
 button svg:hover{
